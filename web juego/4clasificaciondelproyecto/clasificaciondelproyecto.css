@@ -1,0 +1,759 @@
+:root{
+
+    --bg:#070811;
+
+    --purple:#8b5cf6;
+    --blue:#4ea3ff;
+    --pink:#ff73b9;
+    --red:#ff4d4d;
+    --yellow:#ffd166;
+
+    --glass:rgba(255,255,255,.06);
+
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+    font-family:'Rajdhani',sans-serif;
+
+    background:
+    radial-gradient(circle at top,#181f39 0%,#070811 60%);
+
+    color:white;
+
+    position:relative;
+
+    padding-bottom:120px;
+
+}
+
+/* =======================
+   FONDO TECNOLOGICO
+======================= */
+
+.particles{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-2;
+
+    background-image:
+
+    radial-gradient(
+    rgba(255,255,255,.12) 1px,
+    transparent 1px);
+
+    background-size:40px 40px;
+
+    opacity:.4;
+
+}
+
+/* =======================
+   HEADER
+======================= */
+
+.market-header{
+
+    text-align:center;
+
+    padding:80px 20px 50px;
+
+}
+
+.store-code{
+
+    color:#9ea7ff;
+
+    letter-spacing:4px;
+
+    font-size:.9rem;
+
+    margin-bottom:10px;
+
+}
+
+.market-header h1{
+
+    font-family:'Orbitron',sans-serif;
+
+    font-size:clamp(3rem,7vw,6rem);
+
+    text-transform:uppercase;
+
+    letter-spacing:5px;
+
+    text-shadow:
+
+    0 0 20px #ffffff55,
+    0 0 50px #8b5cf655;
+
+}
+
+.subtitle{
+
+    margin-top:15px;
+
+    color:#bfc8ff;
+
+    font-size:1.2rem;
+
+}
+
+/* =======================
+   EMOCIONES
+======================= */
+
+.emotion-banner{
+
+    width:min(1200px,95%);
+
+    margin:auto;
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:15px;
+
+    margin-bottom:80px;
+
+}
+
+.emotion{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:15px 30px;
+
+    border-radius:50px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    backdrop-filter:blur(10px);
+
+    transition:.4s;
+
+}
+
+.emotion:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.nostalgia{
+
+    background:#8b5cf633;
+    border:1px solid #8b5cf6;
+
+    box-shadow:0 0 20px #8b5cf655;
+
+}
+
+.alegria{
+
+    background:#ffd16633;
+    border:1px solid #ffd166;
+
+    box-shadow:0 0 20px #ffd16655;
+
+}
+
+.amor{
+
+    background:#ff73b933;
+    border:1px solid #ff73b9;
+
+    box-shadow:0 0 20px #ff73b955;
+
+}
+
+.miedo{
+
+    background:#4ea3ff33;
+    border:1px solid #4ea3ff;
+
+    box-shadow:0 0 20px #4ea3ff55;
+
+}
+
+.ira{
+
+    background:#ff4d4d33;
+    border:1px solid #ff4d4d;
+
+    box-shadow:0 0 20px #ff4d4d55;
+
+}
+
+/* =======================
+   GONDOLAS
+======================= */
+
+.market{
+
+    width:min(1000px,90%);
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:40px;
+
+}
+
+/* =======================
+   TARJETAS
+======================= */
+
+.shelf{
+
+
+    max-width:450px;
+
+    width:100%;
+
+    justify-self:center;
+
+
+    background:var(--glass);
+
+    border:1px solid rgba(255,255,255,.1);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:25px;
+
+    padding:40px 25px;
+
+    text-align:center;
+
+    position:relative;
+
+    overflow:hidden;
+
+    transition:.5s;
+
+}
+
+.shelf:hover{
+
+    transform:
+    translateY(-12px)
+    scale(1.03);
+
+}
+
+/* =======================
+   FRASCO
+======================= */
+
+.jar{
+
+    width:90px;
+    height:130px;
+
+    margin:auto;
+
+    border-radius:25px;
+
+    background:
+
+    linear-gradient(
+    180deg,
+    rgba(255,255,255,.9),
+    rgba(255,255,255,.15));
+
+    position:relative;
+
+    margin-bottom:25px;
+
+}
+
+.jar::before{
+
+    content:"";
+
+    width:55px;
+    height:18px;
+
+    border-radius:10px;
+
+    background:#d8d8d8;
+
+    position:absolute;
+
+    top:-10px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+}
+
+.jar::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:20px;
+
+    border-radius:15px;
+
+}
+
+/* =======================
+   COLORES DE CADA FRASCO
+======================= */
+
+.commercial .jar::after{
+
+    background:#8b5cf6;
+
+    box-shadow:
+    0 0 30px #8b5cf6;
+
+}
+
+.lucro .jar::after{
+
+    background:#ffd166;
+
+    box-shadow:
+    0 0 30px #ffd166;
+
+}
+
+.tecnologia .jar::after{
+
+    background:#4ea3ff;
+
+    box-shadow:
+    0 0 30px #4ea3ff;
+
+}
+
+.inclusion .jar::after{
+
+    background:#ff73b9;
+
+    box-shadow:
+    0 0 30px #ff73b9;
+
+}
+
+/* =======================
+   TITULOS
+======================= */
+
+.shelf h2{
+
+    font-family:'Orbitron',sans-serif;
+
+    margin-bottom:15px;
+
+    font-size:1.4rem;
+
+    text-transform:uppercase;
+
+}
+
+.shelf p{
+
+    font-size:1.3rem;
+
+    font-weight:600;
+
+}
+
+/* =======================
+   SCANNER
+======================= */
+
+.scanner-zone{
+
+    text-align:center;
+
+    margin-top:100px;
+
+    margin-bottom:80px;
+
+}
+
+.scanner{
+
+    width:min(700px,90%);
+
+    height:10px;
+
+    margin:auto;
+
+    background:#222;
+
+    border-radius:50px;
+
+    overflow:hidden;
+
+}
+
+.scanner-light{
+
+    width:120px;
+
+    height:100%;
+
+    background:
+
+    linear-gradient(
+    90deg,
+    transparent,
+    #00ffff,
+    transparent);
+
+    animation:scan 4s linear infinite;
+
+}
+
+/* =======================
+   FOOTER
+======================= */
+
+footer{
+
+    text-align:center;
+
+    padding:40px;
+
+    color:#9ea7ff;
+
+    letter-spacing:2px;
+
+}
+
+/* =======================
+   ANIMACIONES
+======================= */
+
+@keyframes scan{
+
+    0%{
+        transform:translateX(-120px);
+    }
+
+    100%{
+        transform:translateX(900px);
+    }
+
+}
+/* =======================
+   NOTIFICACIONES
+======================= */
+
+.notification{
+
+    position:fixed;
+
+    top:30px;
+    right:-400px;
+
+    background:
+    rgba(15,20,40,.92);
+
+    color:white;
+
+    padding:16px 24px;
+
+    border-radius:20px;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    backdrop-filter:blur(15px);
+
+    box-shadow:
+    0 0 25px rgba(139,92,246,.4);
+
+    z-index:9999;
+
+    transition:.8s;
+
+    max-width:340px;
+
+    font-weight:600;
+
+    letter-spacing:1px;
+
+}
+
+.notification.show{
+
+    right:30px;
+
+}
+
+/* ==========================================
+   RESPONSIVE CELULAR Y TABLET
+========================================== */
+
+@media(max-width:900px){
+
+    .market{
+
+        grid-template-columns:1fr 1fr;
+
+        width:95%;
+
+        gap:20px;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    body{
+
+        padding-bottom:120px;
+
+    }
+
+    .market-header{
+
+        padding:40px 10px 30px;
+
+    }
+
+    .market-header h1{
+
+        font-size:1.5rem;
+
+        line-height:1.1;
+
+        letter-spacing:0px;
+
+    }
+
+    .subtitle{
+
+        font-size:.95rem;
+
+    }
+
+    .emotion-banner{
+
+        gap:8px;
+
+        margin-bottom:40px;
+
+    }
+
+    .emotion{
+
+        padding:8px 10px;
+
+        font-size:.75rem;
+
+        letter-spacing:0px;
+
+    }
+
+    .market{
+
+        grid-template-columns:1fr;
+
+        width:95%;
+
+        gap:20px;
+
+    }
+
+    .shelf{
+
+        width:100%;
+
+        max-width:320px;
+
+        margin:auto;
+
+        padding:20px;
+
+    }
+
+    .jar{
+
+        width:70px;
+
+        height:100px;
+
+        margin-bottom:15px;
+
+    }
+
+    .shelf h2{
+
+        font-size:1.1rem;
+
+    }
+
+    .shelf p{
+
+        font-size:1rem;
+
+        line-height:1.4;
+
+    }
+
+    .scanner-zone{
+
+        margin-top:50px;
+
+        margin-bottom:50px;
+
+    }
+
+    .notification{
+
+        max-width:260px;
+
+        width:auto;
+
+        padding:10px 14px;
+
+        font-size:.8rem;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    body{
+
+        padding-bottom:150px;
+
+    }
+
+    .market-header h1{
+
+        font-size:1.3rem;
+        line-height:1.1;
+
+    }
+
+    .store-code{
+
+        font-size:.7rem;
+
+        letter-spacing:1px;
+
+    }
+
+    .subtitle{
+
+        font-size:.85rem;
+
+    }
+
+    .emotion-banner{
+
+        display:grid;
+
+        grid-template-columns:1fr 1fr;
+
+        gap:8px;
+
+    }
+
+    .emotion{
+
+        padding:6px 8px;
+
+        font-size:.7rem;
+
+    }
+
+    .shelf{
+
+        max-width:290px;
+
+        padding:18px;
+
+    }
+
+    .jar{
+
+        width:60px;
+
+        height:90px;
+
+    }
+
+    .scanner{
+
+        height:7px;
+
+    }
+
+    footer{
+
+        padding:20px 10px;
+
+        font-size:.85rem;
+
+    }
+
+    .notification{
+
+        max-width:220px;
+
+        font-size:.75rem;
+
+    }
+
+}  
+
+
+html,
+body{
+
+    height:auto;
+
+    min-height:100%;
+
+}
+
+@supports (-webkit-touch-callout:none){
+
+    body{
+
+        min-height:-webkit-fill-available;
+
+    }
+
+}

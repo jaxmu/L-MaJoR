@@ -1,0 +1,740 @@
+:root{
+
+
+--gold:#dfb76c;
+--rose:#e8a7b6;
+--dark:#0d1a10;
+--cream:#fff8ef;
+
+--glass:rgba(255,255,255,.12);
+
+--font-title:'UnifrakturMaguntia', serif;
+--font-fancy:'Playfair Display', serif;
+--font-text:'Dosis', sans-serif;
+
+
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+
+min-height:100vh;
+
+overflow-x:hidden;
+
+font-family:var(--font-text);
+
+color:white;
+
+background:
+
+linear-gradient(
+    rgba(8,15,10,.55),
+    rgba(15,8,14,.75)
+),
+
+url("../img-escenarios/fondojirafa.png");
+
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+
+position:relative;
+
+padding-bottom:140px; /* 🔥 FIX SOLO AGREGADO */
+
+
+}
+
+/* ===========================
+NIEBLA MAGICA
+=========================== */
+
+.magic-fog{
+
+
+position:fixed;
+
+inset:0;
+
+background:
+radial-gradient(
+    circle at center,
+    rgba(255,255,255,.04),
+    transparent 70%
+);
+
+filter:blur(50px);
+
+z-index:-2;
+
+animation:fogMove 20s ease-in-out infinite alternate;
+
+
+}
+
+@keyframes fogMove{
+
+
+from{
+    transform:translateX(-40px);
+}
+
+to{
+    transform:translateX(40px);
+}
+
+
+}
+
+/* ===========================
+PARTICULAS
+=========================== */
+
+.light-particles{
+
+
+position:fixed;
+
+inset:0;
+
+pointer-events:none;
+
+z-index:-1;
+
+
+}
+
+.light-particles::before{
+
+
+content:"";
+
+position:absolute;
+
+width:100%;
+height:100%;
+
+background-image:
+
+radial-gradient(circle,#dfb76c 1px,transparent 1px),
+radial-gradient(circle,#e8a7b6 1px,transparent 1px);
+
+background-size:180px 180px;
+
+opacity:.25;
+
+animation:starsMove 30s linear infinite;
+
+
+}
+
+@keyframes starsMove{
+
+
+from{
+    transform:translateY(0);
+}
+
+to{
+    transform:translateY(-200px);
+}
+
+
+}
+
+/* ===========================
+RELOJ
+=========================== */
+
+.mad-clock{
+
+
+position:fixed;
+
+top:30px;
+right:30px;
+
+font-size:4rem;
+
+opacity:.25;
+
+pointer-events:none;
+
+animation:clockSpin 25s linear infinite;
+
+
+}
+
+@keyframes clockSpin{
+
+
+from{
+    transform:rotate(0deg);
+}
+
+to{
+    transform:rotate(-360deg);
+}
+
+
+}
+
+/* ===========================
+CONTENEDOR
+=========================== */
+
+main{
+
+
+width:min(1200px,95%);
+
+margin:auto;
+
+padding:60px 0;
+
+
+}
+
+/* ===========================
+HEADER
+=========================== */
+
+.hero{
+
+
+text-align:center;
+
+margin-bottom:100px;
+
+
+}
+
+.warning{
+
+
+letter-spacing:5px;
+
+color:var(--rose);
+
+font-weight:700;
+
+margin-bottom:15px;
+
+
+}
+
+.main-title{
+
+
+font-family:var(--font-title);
+
+font-size:clamp(3rem,8vw,7rem);
+
+color:white;
+
+margin-bottom:20px;
+
+animation:
+glowTitle 4s ease-in-out infinite alternate,
+floatTitle 6s ease-in-out infinite;
+
+
+}
+
+@keyframes floatTitle{
+
+
+0%{
+    transform:translateY(0px);
+}
+
+50%{
+    transform:translateY(-10px);
+}
+
+100%{
+    transform:translateY(0px);
+}
+
+
+}
+
+@keyframes glowTitle{
+
+
+from{
+
+    text-shadow:
+
+    0 0 15px white,
+    0 0 25px var(--gold);
+
+}
+
+to{
+
+    text-shadow:
+
+    0 0 20px white,
+    0 0 50px var(--rose);
+
+}
+
+
+}
+
+.subtitle{
+
+
+font-size:1.3rem;
+
+color:var(--gold);
+
+font-family:var(--font-fancy);
+
+font-style:italic;
+
+
+}
+
+
+/* ===========================
+PORTAL INTERDIMENSIONAL
+=========================== */
+
+.portal-view{
+     width:100%;
+      height:100%;
+       background-image:url("../img-escenarios/jirafas.png");
+        background-size:cover;
+         background-position:center;
+          animation: portalBreath 8s ease-in-out infinite;
+ }
+.portal-section{
+
+
+
+text-align:center;
+
+margin-bottom:120px;
+
+
+}
+
+.portal-section h2{
+
+
+font-family:var(--font-fancy);
+
+color:var(--rose);
+
+font-size:2.3rem;
+
+margin-bottom:40px;
+
+
+}
+
+.portal-frame{
+
+
+position:relative;
+
+width:100%;
+
+max-width:450px;
+
+height:650px;
+
+margin:auto;
+
+border-radius:
+50% 50% 45% 45% /
+40% 40% 60% 60%;
+
+overflow:hidden;
+
+border:8px solid var(--gold);
+
+box-shadow:
+0 0 40px rgba(223,183,108,.6),
+inset 0 0 60px rgba(0,0,0,.8);
+
+animation:
+portalFloat 6s ease-in-out infinite;
+
+
+}
+
+@keyframes portalFloat{
+
+
+0%{
+    transform:translateY(0);
+}
+
+50%{
+    transform:translateY(-12px);
+}
+
+100%{
+    transform:translateY(0);
+}
+
+
+}
+
+/* ===========================
+TARJETAS
+=========================== */
+
+.tea-grid{
+
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(280px,1fr));
+
+gap:35px;
+
+margin-bottom:120px;
+
+
+}
+
+.tea-card{
+
+
+background:var(--glass);
+
+backdrop-filter:blur(12px);
+
+border:1px solid rgba(255,255,255,.15);
+
+border-radius:25px;
+
+padding:30px;
+
+transition:.5s;
+
+position:relative;
+
+overflow:hidden;
+
+
+}
+
+.tea-card::before{
+
+
+content:"";
+
+position:absolute;
+
+top:0;
+left:-100%;
+
+width:100%;
+height:100%;
+
+background:
+
+linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.15),
+    transparent
+);
+
+transition:.7s;
+
+
+}
+
+.tea-card:hover::before{
+
+
+left:100%;
+
+
+}
+
+.tea-card:hover{
+
+
+transform:
+translateY(-12px)
+scale(1.03);
+
+box-shadow:
+0 15px 35px rgba(0,0,0,.35);
+
+
+}
+
+.card-icon{
+
+
+font-size:2.4rem;
+
+display:block;
+
+margin-bottom:15px;
+
+
+}
+
+.tea-card h3{
+
+
+font-family:var(--font-fancy);
+
+margin-bottom:15px;
+
+color:var(--gold);
+
+
+}
+
+.tea-card p{
+
+
+line-height:1.7;
+
+
+}
+
+/* ===========================
+FRASE CENTRAL
+=========================== */
+
+.quote-section{
+
+
+text-align:center;
+
+margin-bottom:120px;
+
+
+}
+
+.quote-section blockquote{
+
+
+max-width:800px;
+
+margin:auto;
+
+font-size:1.7rem;
+
+line-height:1.8;
+
+font-family:var(--font-fancy);
+
+font-style:italic;
+
+color:var(--cream);
+
+
+}
+
+/* ===========================
+GALERIA
+=========================== */
+
+.gallery{
+
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(180px,1fr));
+
+gap:25px;
+
+margin-bottom:120px; /* 🔥 FIX SOLO AGREGADO */
+
+
+}
+
+.img{
+
+
+width:100%;
+height:100%;
+
+
+border-radius:25px;
+
+}
+
+.gallery-card{
+
+width:200px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:4rem;
+
+background:rgba(255,255,255,.08);
+
+border-radius:25px;
+
+backdrop-filter:blur(10px);
+
+transition:.4s;
+
+
+}
+
+.gallery-card:hover{
+
+
+transform:
+rotate(5deg)
+scale(1.08);
+
+
+}
+
+/* ===========================
+FOOTER
+=========================== */
+
+footer{
+
+
+text-align:center;
+
+padding:30px;
+
+color:rgba(255,255,255,.7);
+
+font-size:1rem;
+
+
+}
+
+/* ===========================
+MENSAJES JIRAFA
+=========================== */
+
+#giraffe-whisper{
+
+
+position:fixed;
+
+right:30px;
+bottom:30px;
+
+max-width:300px;
+
+padding:15px;
+
+background:
+rgba(255,255,255,.15);
+
+backdrop-filter:blur(10px);
+
+border-radius:20px;
+
+opacity:0;
+
+transform:translateY(20px);
+
+transition:.8s;
+
+z-index:999;
+
+}
+
+#giraffe-whisper.show{
+
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+/* ===========================
+RESPONSIVE
+=========================== */
+
+@media(max-width:768px){
+
+
+main{
+
+    width:92%;
+
+}
+
+.portal-frame{
+
+    height:500px;
+
+    max-width:320px;
+
+}
+
+.main-title{
+
+    font-size:3rem;
+
+}
+
+.quote-section blockquote{
+
+    font-size:1.2rem;
+
+}
+
+.gallery-card{
+
+    height:130px;
+
+    font-size:3rem;
+
+}
+
+.mad-clock{
+
+    font-size:2.5rem;
+
+    top:15px;
+    right:15px;
+
+}
+
+/* 🔥 FIX IMPORTANTE SOLO AGREGADO */
+body{
+    padding-bottom:160px;
+}
+
+.gallery{
+    margin-bottom:160px;
+}
+
+.tea-grid{
+    margin-bottom:140px;
+}
+
+}
+

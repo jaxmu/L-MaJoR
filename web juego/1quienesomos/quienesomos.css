@@ -1,0 +1,169 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Inter, sans-serif;
+
+    background-image:url("../img-escenarios/marino.png");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:scroll;
+
+    min-height:100vh;
+    color:white;
+    overflow-x:hidden;
+    position:relative;
+
+    padding-bottom:100px; 
+}
+
+/* Overlay */
+.overlay{
+    position:fixed;
+    inset:0;
+    background:linear-gradient(rgba(2,12,22,.55),rgba(2,12,22,.80));
+    z-index:-1;
+}
+
+/* Rayos de luz */
+.light-rays{
+    position:fixed;
+    inset:0;
+    background:radial-gradient(circle at 50% -20%,rgba(120,220,255,.15),transparent 60%);
+    animation:lightMove 12s ease-in-out infinite;
+    pointer-events:none;
+}
+
+@keyframes lightMove{
+    0%,100%{transform:translateX(0);}
+    50%{transform:translateX(60px);}
+}
+
+main{
+    width:min(1200px,90%);
+    margin:auto;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.subtitle{
+    letter-spacing:4px;
+    color:#8fdfff;
+    margin-bottom:15px;
+}
+
+.hero h1{
+    font-size:clamp(3rem,8vw,6rem);
+    font-weight:700;
+    text-shadow:0 0 20px rgba(119,212,255,.4);
+    margin-bottom:10px;
+}
+
+.hero h2{
+    font-size:clamp(2rem,4vw,3rem);
+    color:#9ce9ff;
+    margin-bottom:30px;
+}
+
+.description{
+    max-width:800px;
+    font-size:1.2rem;
+    line-height:1.8;
+    color:#d7efff;
+}
+
+.team{
+    padding:100px 0 200px 0; 
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:160px;
+    overflow:visible;
+}
+
+.member{
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(14px);
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:25px;
+    padding:30px;
+    transition:.5s;
+    box-shadow:0 10px 40px rgba(0,0,0,.25);
+}
+
+.member:hover{
+    transform:translateY(-10px);
+    border-color:rgba(119,212,255,.6);
+    box-shadow:0 0 30px rgba(119,212,255,.2);
+}
+
+.member h3{
+    font-size:1.4rem;
+    margin-bottom:15px;
+    color:#b7efff;
+}
+
+.member span{
+    display:block;
+    margin:10px 0;
+    color:#e3f8ff;
+}
+
+/* Animaciones */
+.reveal{
+    opacity:0;
+    transform:translateY(80px);
+    transition:1s ease;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* =========================
+   MOBILE FIX
+   ========================= */
+
+@media (max-width: 768px) {
+
+    .hero {
+        min-height: auto;
+        padding: 80px 10px 40px 10px;
+    }
+
+    .description {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .team {
+        padding: 40px 0 220px 0; 
+        gap: 30px;
+    }
+
+    .member {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 25px;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+}
